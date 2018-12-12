@@ -276,7 +276,7 @@ bool BaseInFileStream::Initialize(Variant &medatada, int32_t clientSideBufferLen
 	//5. Compute the optimal window size by reading the biggest frame size
 	//from the seek file.
 	if (!_pSeekFile->SeekTo(_pSeekFile->Size() - 8)) {
-		FATAL("Unable to seek to %"PRIu64" position", _pSeekFile->Cursor() - 8);
+		FATAL("Unable to seek to %""I64u"" position", _pSeekFile->Cursor() - 8);
 		return false;
 	}
 	uint64_t maxFrameSize = 0;
@@ -302,7 +302,7 @@ bool BaseInFileStream::Initialize(Variant &medatada, int32_t clientSideBufferLen
 
 	//4. Read the frames count from the file
 	if (!_pSeekFile->SeekTo(_seekBaseOffset)) {
-		FATAL("Unable to seek to _seekBaseOffset: %"PRIu64, _seekBaseOffset);
+		FATAL("Unable to seek to _seekBaseOffset: %""I64u", _seekBaseOffset);
 		return false;
 	}
 	if (!_pSeekFile->ReadUI32(&_totalFrames, false)) {
@@ -388,7 +388,7 @@ bool BaseInFileStream::Initialize(int32_t clientSideBufferLength, bool hasTimer)
 	//5. Compute the optimal window size by reading the biggest frame size
 	//from the seek file.
 	if (!_pSeekFile->SeekTo(_pSeekFile->Size() - 8)) {
-		FATAL("Unable to seek to %"PRIu64" position", _pSeekFile->Cursor() - 8);
+		FATAL("Unable to seek to %""I64u"" position", _pSeekFile->Cursor() - 8);
 		return false;
 	}
 	uint64_t maxFrameSize = 0;
@@ -413,7 +413,7 @@ bool BaseInFileStream::Initialize(int32_t clientSideBufferLength, bool hasTimer)
 
 	//4. Read the frames count from the file
 	if (!_pSeekFile->SeekTo(_seekBaseOffset)) {
-		FATAL("Unable to seek to _seekBaseOffset: %"PRIu64, _seekBaseOffset);
+		FATAL("Unable to seek to _seekBaseOffset: %""I64u", _seekBaseOffset);
 		return false;
 	}
 	if (!_pSeekFile->ReadUI32(&_totalFrames, false)) {

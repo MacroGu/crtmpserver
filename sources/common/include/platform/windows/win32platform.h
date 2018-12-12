@@ -60,7 +60,7 @@
 
 #ifndef PRIu16
 #define PRIu16 "hu"
-#endif /* PRIu16 */
+#endif /* "I64u" */
 
 #ifndef PRIx16
 #define PRIx16 "hx"

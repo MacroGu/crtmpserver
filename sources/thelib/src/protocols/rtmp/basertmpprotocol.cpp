@@ -616,7 +616,7 @@ BaseOutNetRTMPStream * BaseRTMPProtocol::CreateONS(uint32_t streamId,
 	} else {
 
 		if (_streams[streamId]->GetType() != ST_NEUTRAL_RTMP) {
-			FATAL("Try to play a stream over a non neutral stream: id: %u; type: %"PRIu64,
+			FATAL("Try to play a stream over a non neutral stream: id: %u; type: %""I64u",
 					streamId, _streams[streamId]->GetType());
 			return NULL;
 		}

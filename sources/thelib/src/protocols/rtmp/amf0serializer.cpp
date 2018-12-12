@@ -88,7 +88,7 @@ bool AMF0Serializer::ReadShortString(IOBuffer &buffer, Variant &variant,
 	AMF_CHECK_BOUNDARIES(buffer, length);
 	variant = string((char *) (GETIBPOINTER(buffer)), length);
 	if (!buffer.Ignore(length)) {
-		FATAL("Unable to ignore %"PRIu16" bytes", length);
+		FATAL("Unable to ignore %""I64u"" bytes", length);
 		return false;
 	}
 	return true;

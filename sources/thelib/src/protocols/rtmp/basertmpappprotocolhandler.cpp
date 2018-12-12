@@ -958,7 +958,7 @@ bool BaseRTMPAppProtocolHandler::ProcessInvokePublish(BaseRTMPProtocol *pFrom,
 	map<uint32_t, BaseOutStream *> subscribedOutStreams =
 			GetApplication()->GetStreamsManager()->GetWaitingSubscribers(
 			streamName, pInNetRTMPStream->GetType(), true);
-	//FINEST("subscribedOutStreams count: %"PRIz"u", subscribedOutStreams.size());
+	//FINEST("subscribedOutStreams count: %""I""u", subscribedOutStreams.size());
 
 
 	//7. Bind the waiting subscribers
