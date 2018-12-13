@@ -65,6 +65,8 @@ private:
 	uint64_t _videoDroppedBytesCount;
 	IOBuffer _videoBucket;
 
+	double _feedTime;
+
 	StreamCapabilities _streamCapabilities;
 
 	IOBuffer _SPS;
@@ -77,6 +79,8 @@ public:
 
 	void SetAudioVideoPidDescriptors(_PIDDescriptor *pAudioPidDescriptor,
 			_PIDDescriptor *pVideoPidDescriptor);
+
+	double GetFeedTime() { return 0; };
 
 	bool FeedData(uint8_t *pData, uint32_t length, bool packetStart,
 			bool isAudio, int8_t sequenceNumber);

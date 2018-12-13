@@ -394,7 +394,6 @@ bool ReadLuaState(lua_State *pLuaState, string node, Variant &configuration) {
 
 bool ReadLuaFile(string fileName, string section, Variant &configuration) {
 	lua_State *pLuaState = CreateLuaState(NULL);
-
 	if (!LoadLuaScriptFromFile(fileName, pLuaState)) {
 		DestroyLuaState(pLuaState);
 		return false;

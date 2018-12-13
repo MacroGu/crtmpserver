@@ -23,6 +23,11 @@
 
 #include "basevm.h"
 
+extern "C"
+{
+	#include"lauxlib.h"
+}
+
 class DLLEXP BaseVMLua
 : public BaseVM {
 private:

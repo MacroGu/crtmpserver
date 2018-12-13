@@ -31,7 +31,7 @@ configuration=
 			type="file",
 			level=6,
 			-- the file where the log messages are going to land
-			fileName="/tmp/crtmpserver",
+			fileName="crtmpserver.log",
 			--newLineCharacters="\r\n",
 			fileHistorySize=10,
 			fileLength=1024*256,
@@ -87,13 +87,13 @@ configuration=
 					port=1935,
 					protocol="inboundRtmp"
 				},
-				{
+				--[[{
 					ip="0.0.0.0",
 					port=8081,
 					protocol="inboundRtmps",
 					sslKey="server.key",
 					sslCert="server.crt"
-				},
+				},]]--
 				{
 					ip="0.0.0.0",
 					port=8080,
@@ -105,7 +105,7 @@ configuration=
 			description="FLV Playback Sample",
 			name="flvplayback",
 			protocol="dynamiclinklibrary",
-			mediaFolder="/Volumes/Storage/media/mp4",
+			mediaFolder=".",
 			aliases=
 			{
 				"simpleLive",
