@@ -45,8 +45,8 @@ bool BaseMediaDocument::Process() {
 	_seekGranularity = (uint32_t) _metadata[META_MEDIA_SEEK_SETTINGS][META_MEDIA_GRANULARITY];
 #else
 	_mediaFilePath = (string) _metadata[META_SERVER_FULL_PATH];
-	_metaFilePath = _mediaFilePath + "."MEDIA_TYPE_META;
-	_seekFilePath = _mediaFilePath + "."MEDIA_TYPE_SEEK;
+	_metaFilePath = _mediaFilePath + ".""meta";
+	_seekFilePath = _mediaFilePath + ".""meta";
 	_keyframeSeek = (bool)_metadata[CONF_APPLICATION_KEYFRAMESEEK];
 	_seekGranularity = (uint32_t) _metadata[CONF_APPLICATION_SEEKGRANULARITY];
 #endif /* HAS_VOD_MANAGER */

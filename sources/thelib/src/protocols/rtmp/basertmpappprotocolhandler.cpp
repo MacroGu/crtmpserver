@@ -632,8 +632,8 @@ bool BaseRTMPAppProtocolHandler::ProcessUsrCtrl(BaseRTMPProtocol *pFrom,
 				bufferLen = bufferLen / 1000 + 1;
 			else
 				bufferLen = bufferLen / 1000;
-			//			FINEST("streamId: %"PRIu32, streamId);
-			//			FINEST("bufferLen: %"PRIu32, bufferLen);
+			//			FINEST("streamId: %""I32u", streamId);
+			//			FINEST("bufferLen: %""I32u", bufferLen);
 			BaseStream *pStream = pFrom->GetRTMPStream(streamId);
 			if (pStream == NULL) {
 				return true;
@@ -2123,8 +2123,8 @@ Variant BaseRTMPAppProtocolHandler::GetMetaData(string streamName,
 
 	//7. Load the rest of the metadata from a cache or load it from file and
 	//cache it after that
-	string metaPath = (string) result[META_SERVER_FULL_PATH] + "."MEDIA_TYPE_META;
-	string seekPath = (string) result[META_SERVER_FULL_PATH] + "."MEDIA_TYPE_SEEK;
+	string metaPath = (string) result[META_SERVER_FULL_PATH] + ".""meta";
+	string seekPath = (string) result[META_SERVER_FULL_PATH] + ".""meta";
 	bool regenerateFiles = true;
 	if (fileExists(metaPath) && fileExists(seekPath)) {
 		StreamCapabilities capabilities;

@@ -465,8 +465,8 @@ _VIDEO_AVC::operator string() {
 	string result;
 	result += format("_spsLength: %""I64u""\n", _spsLength);
 	result += format("_ppsLength: %""I64u""\n", _ppsLength);
-	result += format("_rate: %"PRIu32"\n", _rate);
-	result += format("WxH: %"PRIu32"x%"PRIu32, _width, _height);
+	result += format("_rate: %""I32u""\n", _rate);
+	result += format("WxH: %""I32u""x%""I32u", _width, _height);
 	return result;
 }
 
@@ -745,7 +745,7 @@ bool StreamCapabilities::Deserialize(string seekFilePath, StreamCapabilities &ca
 		return false;
 	}
 	if (length > 1024 * 1024) {
-		FATAL("Invalid stream capabilities length in file %s: %"PRIu32, STR(seekFilePath), length);
+		FATAL("Invalid stream capabilities length in file %s: %""I32u", STR(seekFilePath), length);
 		return false;
 	}
 

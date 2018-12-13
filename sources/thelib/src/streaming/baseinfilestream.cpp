@@ -113,17 +113,17 @@ BaseInFileStream::~BaseInFileStream() {
 
 void BaseInFileStream::SetClientSideBuffer(uint32_t value) {
 	if (value == 0) {
-		//WARN("Invalid client side buffer value: %"PRIu32, value);
+		//WARN("Invalid client side buffer value: %""I32u", value);
 		return;
 	}
 	if (value > 120) {
 		value = 120;
 	}
 	if (_clientSideBufferLength > value) {
-		//WARN("Client side buffer must be bigger than %"PRIu32, _clientSideBufferLength);
+		//WARN("Client side buffer must be bigger than %""I32u", _clientSideBufferLength);
 		return;
 	}
-	//	FINEST("Client side buffer modified: %"PRIu32" -> %"PRIu32,
+	//	FINEST("Client side buffer modified: %""I32u"" -> %""I32u",
 	//			_clientSideBufferLength, value);
 	_clientSideBufferLength = value;
 }
@@ -327,7 +327,7 @@ bool BaseInFileStream::Initialize(Variant &medatada, int32_t clientSideBufferLen
 			val = 1;
 		if (val > (_clientSideBufferLength - 1))
 			val = _clientSideBufferLength - 1;
-		FINEST("_clientSideBufferLength: %"PRIu32"; timer: %"PRIu32, _clientSideBufferLength, (uint32_t) val);
+		FINEST("_clientSideBufferLength: %""I32u""; timer: %""I32u", _clientSideBufferLength, (uint32_t) val);
 		_pTimer->EnqueueForTimeEvent((uint32_t) val);
 	}
 
@@ -340,7 +340,7 @@ bool BaseInFileStream::Initialize(Variant &medatada, int32_t clientSideBufferLen
 
 bool BaseInFileStream::Initialize(int32_t clientSideBufferLength, bool hasTimer) {
 	//1. Check to see if we have an universal seeking file
-	string seekFilePath = GetName() + "."MEDIA_TYPE_SEEK;
+	string seekFilePath = GetName() + ".""seek";
 	if (!fileExists(seekFilePath)) {
 		Variant temp;
 		temp[META_SERVER_FULL_PATH] = GetName();

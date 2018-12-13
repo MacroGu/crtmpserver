@@ -88,7 +88,7 @@ BaseFdStats::operator string() {
 	return format("current: %"PRId64"; max: %"PRId64"; total: %"PRIu64"; in: %"PRIu64"; out: %"PRIu64,
 			_current, _max, _total, _inBytes, _outBytes);
 #else
-	return format("current: %"PRId64"; max: %"PRId64"; total: %"PRIu64,
+	return format("current: %""I64u""; max: %""I64u""; total: %""I64u",
 			_current, _max, _total);
 #endif /* GLOBALLY_ACCOUNT_BYTES */
 }
@@ -287,7 +287,7 @@ FdStats::operator string() {
 			"          managedUdp: %s\n"
 			"    managedNonTcpUdp: %s\n"
 			"              rawUdp: %s\n"
-			"         grand total: current: %"PRId64"; max: %"PRId64"; total: %"PRIu64,
+			"         grand total: current: %""I64u""; max: %""I64u""; total: %""I64u",
 			STR(_managedTcp),
 			STR(_managedTcpAcceptors),
 			STR(_managedTcpConnectors),

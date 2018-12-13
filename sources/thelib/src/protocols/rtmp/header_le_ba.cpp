@@ -346,7 +346,7 @@ bool Header::Write(IOBuffer &buffer) {
 }
 
 Header::operator string() {
-	return format("(RC: %"PRIu8"; HT: %"PRIu8"; CI: %02"PRIu32"; T: % 9"PRIu32"; L: % 6"PRIu32"; MT: % 2"PRIu8"; SI: % 2"PRIu32"; IA: %"PRIu8")",
+	return format("(RC: %""u""; HT: %""u""; CI: %02""I32u""; T: % 9""I32u""; L: % 6""I32u""; MT: % 2""u""; SI: % 2""I32u""; IA: %""u"")",
 			readCompleted, ht, ci, hf.s.ts, hf.s.ml, hf.s.mt, hf.s.si, isAbsolute);
 }
 

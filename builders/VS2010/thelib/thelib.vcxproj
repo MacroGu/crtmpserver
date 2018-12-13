@@ -81,7 +81,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\OpenSSL-Win32\include;..\..\..\sources\common\include;..\..\..\sources\thelib\include;..\..\..\3rdparty\lua-dev;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\openssl\include;..\..\..\sources\common\include;..\..\..\sources\thelib\include;..\..\..\3rdparty\lua-dev;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>LITTLE_ENDIAN_BYTE_ALIGNED;NET_SELECT;HAS_LUA;HAS_PROTOCOL_HTTP;HAS_PROTOCOL_RTMP;HAS_PROTOCOL_RTP;HAS_PROTOCOL_LIVEFLV;HAS_PROTOCOL_TS;HAS_PROTOCOL_VAR;HAS_PROTOCOL_CLI;HAS_MEDIA_MP3;HAS_MEDIA_MP4;HAS_MEDIA_FLV;VM_LUA;HandleTSVideoData=HandleVideoData_version3;CreateRTCPPacket=CreateRTCPPacket_mystyle_only_once;FeedDataAudioMPEG4Generic=FeedDataAudioMPEG4Generic_one_by_one;WIN32;_DEBUG;_WINDOWS;_USRDLL;THELIB_EXPORTS;_CRT_SECURE_NO_WARNINGS;CreateRTCPPacket=CreateRTCPPacket_mystyle;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -95,7 +95,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>ws2_32.lib;Mswsock.lib;libeay32.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\OpenSSL-Win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -187,6 +187,10 @@
     <ClCompile Include="..\..\..\sources\thelib\src\application\clientapplicationmanager.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\configuration\configfile.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\configuration\module.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomabst.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomafra.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomafrt.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomasrt.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomavc1.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomavcc.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\atomco64.cpp" />
@@ -234,6 +238,7 @@
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\mp4document.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\versionedatom.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\mp4\versionedboxatom.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\netio\fdstats.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\netio\select\inboundnamedpipecarrier.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\netio\select\iohandler.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\netio\select\iohandlermanager.cpp" />
@@ -267,6 +272,7 @@
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\connectivity\inboundconnectivity.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\connectivity\outboundconnectivity.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\inboundrtpprotocol.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\nattraversalprotocol.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\rtcpprotocol.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\rtspprotocol.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\rtp\sdp.cpp" />
@@ -317,6 +323,7 @@
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\variant\basevariantappprotocolhandler.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\variant\basevariantprotocol.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\variant\binvariantprotocol.cpp" />
+    <ClCompile Include="..\..\..\sources\thelib\src\protocols\variant\jsonvariantprotocol.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\protocols\variant\xmlvariantprotocol.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\basemediadocument.cpp" />
     <ClCompile Include="..\..\..\sources\thelib\src\mediaformats\flv\flvdocument.cpp" />

@@ -134,12 +134,12 @@ string OutboundConnectivity::GetAudioPorts() {
 }
 
 string OutboundConnectivity::GetVideoChannels() {
-	return format("%"PRIu8"-%"PRIu8, _rtpClient.videoDataChannel,
+	return format("%""u""-%""u", _rtpClient.videoDataChannel,
 			_rtpClient.videoRtcpChannel);
 }
 
 string OutboundConnectivity::GetAudioChannels() {
-	return format("%"PRIu8"-%"PRIu8, _rtpClient.audioDataChannel,
+	return format("%""u""-%""u", _rtpClient.audioDataChannel,
 			_rtpClient.audioRtcpChannel);
 }
 
